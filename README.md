@@ -42,16 +42,6 @@ A **ODS 3** lembra que viver bem é um direito de todas as idades. Esta página 
 - ♿ **Acessibilidade**: textos alternativos, `aria-live` no placar, foco visível por teclado e suporte a `prefers-reduced-motion`.
 - ⚡ **Leve e sem dependências**: HTML, CSS e JavaScript puros, sem frameworks e sem etapa de build.
 
-## Capturas de tela
-
-<div align="center">
-
-| Seção "Sobre" | Dicas de saúde | Mobile |
-|:---:|:---:|:---:|
-| <img src="docs/screenshots/desktop-sobre.png" width="340" alt="Seção Sobre com a barra fixa no topo"> | <img src="docs/screenshots/desktop-dicas.png" width="340" alt="Seção de dicas com a barra fixa no topo"> | <img src="docs/screenshots/mobile.png" width="150" alt="Layout mobile"> |
-
-</div>
-
 ## Tecnologias
 
 | Tecnologia | Uso |
