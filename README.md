@@ -26,6 +26,16 @@ Landing page interativa com jogo da memória, criada para o Projeto de Extensão
 
 </div>
 
+<div align="center">
+
+  <p>
+    <a href="https://station137.github.io/saude-e-bem-estar/" target="_blank">
+      <img src="https://img.shields.io/badge/✨_Acessar_a Pagina_Online-2ea44f?style=for-the-badge" alt="Landing Page" />
+    </a>
+  </p>
+
+</div>
+
 ---
 
 ## Sobre o projeto
