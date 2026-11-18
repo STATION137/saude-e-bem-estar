@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#FFF7E9">
+  <title>Saúde e Bem-Estar · Jogo da Memória · UniOpet · ODS 3</title>
+  <meta name="description" content="Jogo da memória lúdico sobre Saúde e Bem-Estar (ODS 3) — Centro Universitário UniOpet.">
+
+  <link rel="preload" href="assets/fonts/baloo-2-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!--
+    Todas as ilustrações são PNGs com canal alfa em assets/img/ (recortados dos atlas em /assets).
+    As posições de cada camada ficam nas variáveis inline de cada <img>:
+      --x --y --w --z  → layout vertical (celular, base 768 unidades)
+      --dx --dy --dw --dz → layout horizontal (desktop, base 1536 unidades)
+  -->
+  <main class="poster" id="inicio">
+    <div class="stage">
+
+      <!-- ===== Cenário (camadas PNG atrás de tudo) ===== -->
+      <img class="d sun glow" src="assets/img/sun.png" width="301" height="148" alt="" aria-hidden="true" decoding="async" style="--x:270;--y:96;--w:240;--z:1;--dx:930;--dy:95;--dw:400;--dz:1">
+      <img class="d cloud drift" src="assets/img/cloud_s.png" width="87" height="32" alt="" aria-hidden="true" decoding="async" style="--x:40;--y:120;--w:170;--z:1;--dx:110;--dy:150;--dw:230;--dz:1">
+      <img class="d cloud drift slow" src="assets/img/cloud_s.png" width="87" height="32" alt="" aria-hidden="true" decoding="async" style="--x:560;--y:86;--w:150;--z:1;--dx:600;--dy:95;--dw:190;--dz:1">
+      <img class="d cloud drift d-only" src="assets/img/cloud_s.png" width="87" height="32" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:1390;--dy:205;--dw:150;--dz:1">
+      <img class="d hills" src="assets/img/hills.png" width="758" height="108" alt="" aria-hidden="true" decoding="async" style="--x:-90;--y:205;--w:950;--z:1;--dx:-40;--dy:250;--dw:1650;--dz:1">
+      <img class="d cypress" src="assets/img/tree_cyp.png" width="193" height="290" alt="" aria-hidden="true" decoding="async" style="--x:8;--y:125;--w:125;--z:2;--dx:1150;--dy:205;--dw:185;--dz:3">
+      <img class="d cypress" src="assets/img/tree_cyp.png" width="193" height="290" alt="" aria-hidden="true" decoding="async" style="--x:645;--y:135;--w:115;--z:2;--dx:345;--dy:225;--dw:150;--dz:3;--f:-1;--df:-1">
+      <img class="d tree" src="assets/img/tree_big.png" width="485" height="521" alt="" aria-hidden="true" decoding="async" style="--x:-85;--y:-35;--w:400;--z:3;--dx:-120;--dy:-70;--dw:540;--dz:4">
+      <img class="d tree" src="assets/img/tree_big.png" width="485" height="521" alt="" aria-hidden="true" decoding="async" style="--x:453;--y:-35;--w:400;--z:3;--dx:1116;--dy:-60;--dw:540;--dz:4;--f:-1;--df:-1">
+      <img class="d meadow" src="assets/img/meadow_light.png" width="1600" height="300" alt="" aria-hidden="true" decoding="async" style="--x:0;--y:300;--w:768;--z:2;--dx:0;--dy:395;--dw:1536;--dz:2">
+      <img class="d meadow d-only" src="assets/img/meadow_mid.png" width="1600" height="300" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:0;--dy:585;--dw:1536;--dz:3">
+      <img class="d lamp d-only" src="assets/img/lamp.png" width="62" height="251" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:498;--dy:240;--dw:46;--dz:4">
+      <img class="d lamp d-only" src="assets/img/lamp.png" width="62" height="251" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:1420;--dy:300;--dw:34;--dz:4">
+      <img class="d bench d-only" src="assets/img/bench.png" width="197" height="128" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:1000;--dy:468;--dw:170;--dz:4">
+      <img class="d bush d-only" src="assets/img/bush_sm.png" width="138" height="95" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:868;--dy:500;--dw:130;--dz:4">
+      <img class="d bush d-only" src="assets/img/bush_flw2.png" width="230" height="184" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:1075;--dy:452;--dw:200;--dz:4">
+      <img class="d flowerbed d-only" src="assets/img/flowerbed_a.png" width="399" height="116" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:0;--dy:578;--dw:520;--dz:5">
+      <img class="d planter m-only" src="assets/img/a2_planter.png" width="364" height="245" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:226;--y:290;--w:300;--z:4">
+      <img class="d cream m-only" src="assets/img/meadow_cream.png" width="1600" height="300" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:0;--y:468;--w:768;--z:6">
+      <img class="d fg sway" src="assets/img/bush_big.png" width="296" height="214" alt="" aria-hidden="true" decoding="async" style="--x:-62;--y:338;--w:270;--z:7;--dx:-70;--dy:730;--dw:400;--dz:9">
+      <img class="d fg sway" src="assets/img/a2_bush_fl.png" width="383" height="266" alt="" aria-hidden="true" decoding="async" style="--x:548;--y:352;--w:285;--z:7;--dx:1135;--dy:688;--dw:470;--dz:9;--f:-1;--df:-1">
+      <img class="d fg sway" src="assets/img/a2_plant9.png" width="140" height="179" alt="" aria-hidden="true" decoding="async" style="--x:-6;--y:262;--w:96;--z:7;--dx:1015;--dy:792;--dw:118;--dz:9">
+      <img class="d fg sway" src="assets/img/a2_plant6.png" width="125" height="157" alt="" aria-hidden="true" decoding="async" style="--x:690;--y:262;--w:92;--z:7;--dx:1432;--dy:610;--dw:95;--dz:9">
+      <img class="d fg d-only" src="assets/img/bush_orange.png" width="352" height="154" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:250;--dy:812;--dw:300;--dz:9">
+      <img class="d fg sway m-only" src="assets/img/bush_orange.png" width="352" height="154" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:-92;--y:470;--w:215;--z:7">
+      <img class="d fg sway m-only" src="assets/img/a2_bush14.png" width="173" height="121" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:-30;--y:590;--w:170;--z:9">
+      <img class="d fg m-only" src="assets/img/a2_plant9.png" width="140" height="179" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:-4;--y:520;--w:92;--z:6">
+      <img class="d fg sway m-only" src="assets/img/a2_bush_fl.png" width="383" height="266" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:-62;--y:452;--w:210;--z:7">
+      <img class="d fg sway m-only" src="assets/img/bush_big.png" width="296" height="214" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:-50;--y:545;--w:190;--z:8">
+      <img class="d fg sway m-only" src="assets/img/a2_bush_fl.png" width="383" height="266" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:618;--y:452;--w:210;--z:7;--f:-1;--df:1">
+      <img class="d fg sway m-only" src="assets/img/bush_big.png" width="296" height="214" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:640;--y:560;--w:190;--z:8;--f:-1;--df:1">
+      <img class="d fg sway m-only" src="assets/img/bush_big.png" width="296" height="214" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:55;--y:535;--w:200;--z:7;--f:-1">
+      <img class="d fg sway m-only" src="assets/img/a2_bush14.png" width="173" height="121" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:70;--y:600;--w:150;--z:7">
+      <img class="d fg sway m-only" src="assets/img/bush_big.png" width="296" height="214" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:513;--y:535;--w:200;--z:7">
+      <img class="d fg sway m-only" src="assets/img/a2_bush14.png" width="173" height="121" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:548;--y:600;--w:150;--z:7;--f:-1">
+      <img class="d fg m-only" src="assets/img/a2_plant6.png" width="125" height="157" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:700;--y:505;--w:80;--z:8">
+      <img class="d ground d-only" src="assets/img/ground_dark.png" width="1600" height="280" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:0;--dy:770;--dw:1536;--dz:8">
+      <img class="d shadow d-only" src="assets/img/shadow.png" width="600" height="100" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:30;--dy:684;--dw:200;--dz:5">
+      <img class="d shadow d-only" src="assets/img/shadow.png" width="600" height="100" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:215;--dy:676;--dw:290;--dz:5">
+      <img class="d shadow d-only" src="assets/img/shadow.png" width="600" height="100" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:1085;--dy:632;--dw:215;--dz:5">
+      <img class="d shadow d-only" src="assets/img/shadow.png" width="600" height="100" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:1290;--dy:704;--dw:300;--dz:5">
+      <img class="d tuft d-only" src="assets/img/plant_a.png" width="91" height="56" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:70;--dy:672;--dw:95;--dz:7">
+      <img class="d tuft d-only" src="assets/img/a2_leaf16.png" width="88" height="72" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:415;--dy:680;--dw:78;--dz:7">
+      <img class="d tuft d-only" src="assets/img/plant_a.png" width="91" height="56" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:1170;--dy:618;--dw:80;--dz:7;--f:1;--df:-1">
+      <img class="d tuft d-only" src="assets/img/plant_a.png" width="91" height="56" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:1330;--dy:706;--dw:86;--dz:8">
+      <img class="d blob m-only" src="assets/img/blob-blue.png" width="304" height="784" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:0;--y:768;--w:76;--z:1">
+      <img class="d blob m-only" src="assets/img/blob-orange.png" width="400" height="1104" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:668;--y:678;--w:100;--z:1">
+      <img class="d blob bot m-only" src="assets/img/blob-yellow.png" width="172" height="164" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--yb:412;--x:651;--w:43;--z:1">
+      <img class="d blob m-only" src="assets/img/deco-heart.png" width="152" height="144" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:653;--y:641;--w:38;--z:1">
+      <img class="d blob bot m-only" src="assets/img/hill_warm_l.png" width="560" height="330" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--yb:0;--x:0;--w:300;--z:1">
+      <img class="d blob bot m-only" src="assets/img/hill_warm_r.png" width="560" height="330" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--yb:0;--x:468;--w:300;--z:1">
+      <img class="d sprk twinkle m-only" src="assets/img/sparkle-yellow.png" width="96" height="96" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--x:70;--y:733;--w:38;--z:1">
+      <img class="d sprk twinkle bot m-only" src="assets/img/sparkle-orange.png" width="96" height="96" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--yb:148;--x:217;--w:26;--z:1">
+      <img class="d sprk twinkle bot m-only" src="assets/img/sparkle-peach.png" width="96" height="96" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--yb:169;--x:466;--w:18;--z:1">
+      <img class="d sprk twinkle bot m-only" src="assets/img/sparkle-yellow.png" width="96" height="96" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--yb:349;--x:725;--w:24;--z:1">
+      <img class="d leaf fall" src="assets/img/leaf_1.png" width="39" height="65" alt="" aria-hidden="true" decoding="async" style="--x:110;--y:40;--w:26;--z:9;--dx:300;--dy:95;--dw:34;--dz:9">
+      <img class="d leaf fall f2" src="assets/img/leaf_2.png" width="45" height="65" alt="" aria-hidden="true" decoding="async" style="--x:640;--y:70;--w:28;--z:9;--dx:1240;--dy:140;--dw:38;--dz:9">
+      <img class="d leaf fall f3 d-only" src="assets/img/leaf_3.png" width="42" height="63" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:880;--dy:60;--dw:30;--dz:9">
+      <img class="d leaf fall f3 d-only" src="assets/img/leaf_2.png" width="45" height="65" alt="" aria-hidden="true" decoding="async" loading="lazy" style="--dx:120;--dy:420;--dw:30;--dz:9">
+
+      <!-- ===== Barra de navegação (desktop) ===== -->
+      <nav class="nav" aria-label="Principal">
+        <a class="nav-brand" href="#inicio">
+          <img src="assets/img/logo-heart.png" width="160" height="150" alt="" aria-hidden="true">
+          <span>SAÚDE E<br>BEM-ESTAR</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#gameCard" class="is-active">Jogo da Memória</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#dicas">Dicas</a></li>
+        </ul>
+        <button class="sound-toggle" id="soundBtn" type="button" aria-pressed="false" title="Desativar som">
+          <img id="soundIcon" src="assets/img/icon-sound-on.png" alt="" draggable="false">
+          <span class="sr-only">Ligar ou desligar o som</span>
+        </button>
+      </nav>
+
+      <!-- ===== Título ===== -->
+      <header class="hero">
+        <h1 class="hero-title">
+          <img class="t-line" src="assets/img/title_line.png" width="856" height="126" alt="Saúde e Bem-Estar">
+          <img class="t-stack" src="assets/img/title.png" width="615" height="232" alt="" aria-hidden="true">
+        </h1>
+        <p class="hero-tag">Pequenos hábitos, grandes mudanças!</p>
+      </header>
+
+      <!-- ===== Painel do jogo ===== -->
+      <section class="game-card" id="gameCard" aria-labelledby="gameTitle">
+        <h2 id="gameTitle">JOGO DA MEMÓRIA</h2>
+        <p class="game-sub">Encontre os pares e complete todos os desafios!</p>
+
+        <!-- Estado inicial = prévia idêntica ao layout. O JS monta as 12 cartas ao clicar em COMEÇAR -->
+        <div class="board" id="board" data-state="idle" role="group" aria-label="Tabuleiro do jogo da memória">
+          <button class="card" type="button" aria-label="Carta 1: virada para baixo">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"></span>
+            </span>
+          </button>
+          <button class="card is-flipped" type="button" style="--c:#E2574C" aria-label="Carta 2: Coração">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"><img src="assets/img/card_heart.png" alt="Coração" draggable="false"></span>
+            </span>
+          </button>
+          <button class="card" type="button" aria-label="Carta 3: virada para baixo">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"></span>
+            </span>
+          </button>
+          <button class="card" type="button" aria-label="Carta 4: virada para baixo">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"></span>
+            </span>
+          </button>
+          <button class="card" type="button" aria-label="Carta 5: virada para baixo">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"></span>
+            </span>
+          </button>
+          <button class="card" type="button" aria-label="Carta 6: virada para baixo">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"></span>
+            </span>
+          </button>
+          <button class="card is-flipped" type="button" style="--c:#F2B21C" aria-label="Carta 7: Maçã">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"><img src="assets/img/card_apple.png" alt="Maçã" draggable="false"></span>
+            </span>
+          </button>
+          <button class="card is-flipped" type="button" style="--c:#5DAA46" aria-label="Carta 8: Tênis">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"><img src="assets/img/card_shoe.png" alt="Tênis" draggable="false"></span>
+            </span>
+          </button>
+          <button class="card" type="button" aria-label="Carta 9: virada para baixo">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"></span>
+            </span>
+          </button>
+          <button class="card is-flipped" type="button" style="--c:#4AA8D8" aria-label="Carta 10: Água">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"><img src="assets/img/card_water.png" alt="Água" draggable="false"></span>
+            </span>
+          </button>
+          <button class="card" type="button" aria-label="Carta 11: virada para baixo">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"></span>
+            </span>
+          </button>
+          <button class="card" type="button" aria-label="Carta 12: virada para baixo">
+            <span class="card-inner">
+              <span class="card-face card-back"><img src="assets/img/card_back.png" alt="" draggable="false"></span>
+              <span class="card-face card-front"></span>
+            </span>
+          </button>
+        </div>
+
+        <p class="status" id="status" aria-live="polite">Pares encontrados: 0 / 6</p>
+
+        <button class="btn-start" id="startBtn" type="button">COMEÇAR</button>
+      </section>
+
+      <!-- ===== Logos ===== -->
+      <footer class="logos">
+        <img class="logo-uniopet" src="assets/img/logo_uni.png" width="138" height="141" alt="Centro Universitário UniOpet">
+        <img class="logo-ods"     src="assets/img/logo_ods.png" width="143" height="142" alt="ODS 3 — Saúde e Bem-Estar">
+      </footer>
+
+      <p class="foot-l">Projeto de Extensão Comunitária</p>
+      <p class="foot-c"><img src="assets/img/leaf_2.png" alt="" aria-hidden="true">Juntos por uma vida mais saudável e feliz!<img class="fl" src="assets/img/leaf_3.png" alt="" aria-hidden="true"></p>
+      <p class="foot-r">ODS 3 · Saúde e Bem-estar<img src="assets/img/leaf_1.png" alt="" aria-hidden="true"></p>
+
+      <!-- ===== Personagens ===== -->
+      <img class="char duo"      src="assets/img/duo.png"      width="669" height="532" alt="Uma cuidadora entrega uma flor a uma senhora idosa em cadeira de rodas, em um parque florido">
+      <img class="char walker"   src="assets/img/walker.png"   width="259" height="448" alt="Senhor idoso sorrindo, caminhando de agasalho azul">
+      <img class="char gardener" src="assets/img/gardener.png" width="338" height="407" alt="Senhora idosa plantando uma muda em um vaso">
+    </div>
+  </main>
+
+  <!-- ===== Sobre ===== -->
+  <section class="info" id="sobre" aria-labelledby="sobreTitle">
+    <div class="info-in">
+      <span class="info-badge"><img src="assets/img/deco-heart.png" alt="" aria-hidden="true"></span>
+      <h2 id="sobreTitle">Cuidar de quem cuidou de nós</h2>
+      <p>A <strong>ODS 3 — Saúde e Bem-Estar</strong> lembra que viver bem é um direito de todas as idades. Cuidar dos idosos é retribuir uma vida inteira de amor: atenção, carinho e pequenos gestos, como uma flor ou um passeio no parque, trazem saúde, alegria e dignidade para quem sempre cuidou de nós.</p>
+    </div>
+  </section>
+
+  <!-- ===== Dicas ===== -->
+  <section class="tips" id="dicas" aria-labelledby="dicasTitle">
+    <div class="tips-in">
+      <h2 id="dicasTitle">Pequenos hábitos, grandes mudanças</h2>
+      <ul class="tip-grid">
+        <li class="tip"><span class="tip-ico"><img src="assets/img/card_heart.png" alt="" loading="lazy" draggable="false"></span><h3>Cuide do coração</h3><p>Caminhadas leves e consultas de rotina ajudam a manter o coração forte em qualquer idade.</p></li>
+        <li class="tip"><span class="tip-ico"><img src="assets/img/card_apple.png" alt="" loading="lazy" draggable="false"></span><h3>Alimente-se bem</h3><p>Frutas, verduras e refeições variadas dão energia, disposição e proteção ao corpo.</p></li>
+        <li class="tip"><span class="tip-ico"><img src="assets/img/card_shoe.png" alt="" loading="lazy" draggable="false"></span><h3>Mexa o corpo</h3><p>Cerca de 30 minutos de movimento por dia melhoram o humor, o equilíbrio e a mobilidade.</p></li>
+        <li class="tip"><span class="tip-ico"><img src="assets/img/card_water.png" alt="" loading="lazy" draggable="false"></span><h3>Beba água</h3><p>Manter-se hidratado ao longo do dia ajuda a evitar cansaço, tontura e dor de cabeça.</p></li>
+        <li class="tip"><span class="tip-ico"><img src="assets/img/card_sun.png" alt="" loading="lazy" draggable="false"></span><h3>Tome um pouco de sol</h3><p>Alguns minutos de sol pela manhã, com proteção, fazem bem ao corpo e ao ânimo.</p></li>
+        <li class="tip"><span class="tip-ico"><img src="assets/img/card_flower.png" alt="" loading="lazy" draggable="false"></span><h3>Cultive carinho</h3><p>Uma visita, uma conversa ou uma flor fazem bem a quem recebe e a quem oferece.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <img src="assets/img/logo_uni.png" width="138" height="141" alt="UniOpet" loading="lazy">
+	<img src="assets/img/logo_ods.png" width="143" height="142" alt="ODS 3 — Saúde e Bem-Estar" loading="lazy">
+    <p>Projeto de Extensão Comunitária · Centro Universitário UniOpet · ODS 3 — Saúde e Bem-estar</p>
+  </footer>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="js/audio.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
